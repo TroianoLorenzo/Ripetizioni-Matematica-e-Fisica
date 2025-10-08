@@ -54,6 +54,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -66,6 +67,7 @@ body {
 .nav {
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .nav-link {
@@ -74,6 +76,10 @@ body {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    padding: 0.5rem 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-link:hover {
@@ -101,7 +107,11 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 8px;
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
+    align-items: center;
 }
 
 .mobile-menu-btn span {
@@ -110,6 +120,7 @@ body {
     background: var(--text-dark);
     margin: 2px 0;
     transition: var(--transition);
+    border-radius: 2px;
 }
 
 /* Hero Section */
@@ -138,6 +149,7 @@ body {
     position: relative;
     color: var(--white);
     max-width: 800px;
+    padding: 2rem;
 }
 
 .hero-title {
@@ -156,7 +168,9 @@ body {
 }
 
 .cta-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: var(--accent-color);
     color: var(--white);
     padding: 1rem 2.5rem;
@@ -167,6 +181,9 @@ body {
     transition: var(--transition);
     box-shadow: var(--shadow);
     animation: fadeInUp 1s ease-out 0.6s both;
+    min-height: 48px;
+    border: none;
+    cursor: pointer;
 }
 
 .cta-button:hover {
@@ -175,15 +192,31 @@ body {
     background: #e08703;
 }
 
+.cta-button:focus {
+    outline: 3px solid rgba(245, 158, 11, 0.5);
+    outline-offset: 2px;
+}
+
+/* BOTTONE CHIAMA ORA - MIGLIORATO PER VISIBILITÀ */
 .cta-secondary {
-    background: transparent;
-    border: 2px solid var(--white);
-    color: var(--white);
+    background: var(--accent-color) !important;
+    border: 2px solid var(--accent-color) !important;
+    color: var(--white) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.4) !important;
 }
 
 .cta-secondary:hover {
-    background: var(--white);
-    color: var(--primary-color);
+    background: #d97706 !important;
+    border-color: #d97706 !important;
+    color: var(--white) !important;
+    box-shadow: 0 8px 25px 0 rgba(217, 119, 6, 0.5) !important;
+    transform: translateY(-3px) !important;
+}
+
+.cta-secondary:focus {
+    outline: 3px solid rgba(245, 158, 11, 0.7) !important;
+    outline-offset: 2px;
 }
 
 /* Sezioni */
@@ -220,6 +253,7 @@ body {
 .about-content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .lead {
@@ -438,6 +472,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .contact-intro {
@@ -459,7 +494,7 @@ body {
 
 .contact-methods {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
 }
@@ -505,13 +540,25 @@ body {
     font-weight: 600;
     font-size: 1.2rem;
     transition: var(--transition);
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.5rem;
+    min-height: 44px;
+    padding: 0.5rem;
+    border-radius: 6px;
 }
 
 .contact-link:hover {
     color: var(--secondary-color);
     transform: scale(1.05);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.contact-link:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.5);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 .contact-details p {
@@ -568,10 +615,34 @@ body {
     }
 }
 
-/* Responsive Design */
+/* Responsive Design Migliorato */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.75rem 0;
+    }
+    
     .nav {
         display: none;
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: var(--border-radius);
+        margin-top: 0.5rem;
+        box-shadow: var(--shadow);
+    }
+    
+    .nav.nav-open {
+        display: flex;
     }
     
     .mobile-menu-btn {
@@ -579,7 +650,7 @@ body {
     }
     
     .hero-content {
-        padding: 2rem;
+        padding: 2rem 1rem;
     }
     
     .section {
@@ -588,18 +659,22 @@ body {
     
     .contact-methods {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .subjects-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
     
     .pricing-table {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .pricing-card.featured {
@@ -617,16 +692,32 @@ body {
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 280px;
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+    
+    .contact-item {
+        padding: 2rem;
+    }
+    
+    .contact-cta {
+        padding: 2rem;
+    }
+    
+    .about-content {
+        padding: 0;
     }
 }
 
 @media (max-width: 480px) {
     .services-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .container {
-        padding: 0 15px;
     }
     
     .hero-title {
@@ -637,12 +728,40 @@ body {
         font-size: 1.1rem;
     }
     
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
     .contact-item {
-        padding: 2rem;
+        padding: 1.5rem;
     }
     
     .contact-cta {
-        padding: 2rem;
+        padding: 1.5rem;
+    }
+    
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.875rem 1.5rem;
+    }
+    
+    .header-content {
+        padding: 0.5rem 0;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .nav {
+        gap: 0.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.75rem;
+        border-radius: 6px;
+        background: rgba(37, 99, 235, 0.05);
     }
 }
 
@@ -664,6 +783,6 @@ body {
 .nav-link:focus,
 .cta-button:focus,
 .contact-link:focus {
-    outline: 2px solid var(--accent-color);
+    outline: 3px solid var(--accent-color);
     outline-offset: 2px;
 }
