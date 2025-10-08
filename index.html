@@ -169,44 +169,40 @@
     <section id="contatti" class="section bg-light">
         <div class="container">
             <h2 class="section-title">Contatti</h2>
-            <div class="contact-content">
-                <div class="contact-info">
+            <div class="contact-content-centered">
+                <div class="contact-intro">
                     <h3>Parliamo del tuo percorso di studio</h3>
+                    <p class="contact-description">Sono sempre disponibile per rispondere alle tue domande e aiutarti a raggiungere i tuoi obiettivi in matematica e fisica. Non esitare a contattarmi!</p>
+                </div>
+                
+                <div class="contact-methods">
                     <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <a href="mailto:lorenz.troiano@gmail.com" class="contact-link">lorenz.troiano@gmail.com</a>
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:lorenz.troiano@gmail.com" class="contact-link">lorenz.troiano@gmail.com</a>
+                            <p>Scrivimi per informazioni dettagliate o per fissare una lezione</p>
+                        </div>
                     </div>
+                    
                     <div class="contact-item">
-                        <span class="contact-icon">📱</span>
-                        <a href="tel:+393281842770" class="contact-link">328 184 2770</a>
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Telefono</h4>
+                            <a href="tel:+393281842770" class="contact-link">328 184 2770</a>
+                            <p>Chiamami per una consulenza immediata o per prenotare</p>
+                        </div>
                     </div>
                 </div>
                 
-                <form class="contact-form" id="contactForm">
-                    <h3>Richiesta Informazioni</h3>
-                    <div class="form-group">
-                        <label for="name">Nome e Cognome *</label>
-                        <input type="text" id="name" name="name" required>
+                <div class="contact-cta">
+                    <h4>Pronto a iniziare?</h4>
+                    <p>Contattami oggi stesso e iniziamo insieme il tuo percorso verso il successo in matematica e fisica!</p>
+                    <div class="cta-buttons">
+                        <a href="mailto:lorenz.troiano@gmail.com" class="cta-button">Scrivi una Email</a>
+                        <a href="tel:+393281842770" class="cta-button cta-secondary">Chiama Ora</a>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Materia di interesse</label>
-                        <select id="subject" name="subject">
-                            <option value="">Seleziona una materia</option>
-                            <option value="matematica">Matematica</option>
-                            <option value="fisica">Fisica</option>
-                            <option value="entrambe">Entrambe</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Messaggio *</label>
-                        <textarea id="message" name="message" rows="4" required placeholder="Descrivi brevemente le tue esigenze..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Invia Richiesta</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
